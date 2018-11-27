@@ -44,4 +44,4 @@ mkdir build-$TARGET-stage2 && cd build-$TARGET-stage2 || { exit 1; }
 ../configure --quiet --prefix="$PS2DEV/$TARGET" --target="$TARGET" --enable-languages="c,c++" --with-newlib --with-headers="$PS2DEV/$TARGET/$TARGET/include" $TARG_XTRA_OPTS || { exit 1; }
 
 ## Compile and install.
-make --quiet clean && make --quiet -j $PROC_NR && make --quiet install && make --quiet clean || { exit 1; }
+$GNUMAKE --quiet clean && $GNUMAKE --quiet -j $PROC_NR && $GNUMAKE --quiet install && $GNUMAKE --quiet clean || { exit 1; }

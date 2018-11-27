@@ -49,7 +49,7 @@ for TARGET in "ee" "iop"; do
 	fi
 
 	## Compile and install.
-	make --quiet clean && make --quiet -j $PROC_NR && make --quiet install && make --quiet clean || { exit 1; }
+	$GNUMAKE --quiet clean && $GNUMAKE --quiet -j $PROC_NR && $GNUMAKE --quiet install && $GNUMAKE --quiet clean || { exit 1; }
 
 	## Exit the build directory.
 	cd .. || { exit 1; }

@@ -41,7 +41,7 @@ for TARGET in "ee" "iop" "dvp"; do
 	fi
 
 	## Compile and install.
-	make --quiet clean && make --quiet -j $PROC_NR CFLAGS="$CFLAGS -D_FORTIFY_SOURCE=0" && make --quiet install && make --quiet clean || { exit 1; }
+	$GNUMAKE --quiet clean && $GNUMAKE --quiet -j $PROC_NR CFLAGS="$CFLAGS -D_FORTIFY_SOURCE=0" && $GNUMAKE --quiet install && $GNUMAKE --quiet clean || { exit 1; }
 
 	## Exit the build directory.
 	cd .. || { exit 1; }

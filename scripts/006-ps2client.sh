@@ -12,4 +12,4 @@ else
 fi
 
 ## Build and install.
-make --quiet clean && make --quiet && make --quiet install && make --quiet clean || { exit 1; }
+$GNUMAKE --quiet clean && $GNUMAKE --quiet && $GNUMAKE --quiet install && $GNUMAKE --quiet clean || { exit 1; }

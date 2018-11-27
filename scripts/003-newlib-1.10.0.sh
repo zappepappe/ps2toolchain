@@ -34,4 +34,4 @@ mkdir build-$TARGET && cd build-$TARGET || { exit 1; }
 ../configure --quiet --prefix="$PS2DEV/$TARGET" --target="$TARGET" || { exit 1; }
 
 ## Compile and install.
-make --quiet clean && CPPFLAGS="-G0" make --quiet -j $PROC_NR && make --quiet install && make --quiet clean || { exit 1; }
+$GNUMAKE --quiet clean && CPPFLAGS="-G0" $GNUMAKE --quiet -j $PROC_NR && $GNUMAKE --quiet install && $GNUMAKE --quiet clean || { exit 1; }
