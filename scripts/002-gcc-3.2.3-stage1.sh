@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # gcc-3.2.3-stage1.sh by AKuHAK
 # Based on gcc-3.2.2-stage1.sh by Naomi Peori (naomi@peori.ca)
 

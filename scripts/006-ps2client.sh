@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ps2client.sh by Naomi Peori (naomi@peori.ca)
 # changed to use Git by Mathias Lafeldt <misfire@debugon.org>
 

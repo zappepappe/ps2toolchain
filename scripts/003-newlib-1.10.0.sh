@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # newlib-1.10.0.sh by Naomi Peori (naomi@peori.ca)
 
 NEWLIB_VERSION=1.10.0

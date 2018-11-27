@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # toolchain.sh by Naomi Peori (naomi@peori.ca)
 
 ## Enter the ps2toolchain directory.

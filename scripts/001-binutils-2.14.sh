@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # binutils-2.14.sh by Naomi Peori (naomi@peori.ca)
 
 BINUTILS_VERSION=2.14
