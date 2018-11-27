@@ -17,7 +17,6 @@ if [ -e ../../patches/gcc-$GCC_VERSION-PS2.patch ]; then
 	cat ../../patches/gcc-$GCC_VERSION-PS2.patch | patch -p1 || { exit 1; }
 fi
 
-OSVER=$(uname)
 ## Apple needs to pretend to be linux
 if [ ${OSVER:0:6} == Darwin ]; then
 	TARG_XTRA_OPTS="--build=i386-linux-gnu --host=i386-linux-gnu"
@@ -25,17 +24,7 @@ else
 	TARG_XTRA_OPTS=""
 fi
 
-## Determine the maximum number of processes that Make can work with.
-if [ ${OSVER:0:10} == MINGW32_NT ]; then
-	PROC_NR=$NUMBER_OF_PROCESSORS
-elif [ ${OSVER:0:6} == Darwin ]; then
-	PROC_NR=$(sysctl -n hw.ncpu)
-else
-	PROC_NR=$(nproc)
-fi
-
 echo "Building with $PROC_NR jobs"
-
 ## For each target...
 for TARGET in "ee" "iop"; do
 	## Create and enter the build directory.

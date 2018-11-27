@@ -14,16 +14,6 @@ else
 		git reset --hard origin/master || exit 1
 fi
 
-## Determine the maximum number of processes that Make can work with.
-#OSVER=$(uname)
-#if [ ${OSVER:0:10} == MINGW32_NT ]; then
-#	PROC_NR=$NUMBER_OF_PROCESSORS
-#elif [ ${OSVER:0:6} == Darwin ]; then
-#	PROC_NR=$(sysctl -n hw.ncpu)
-#else
-#	PROC_NR=$(nproc)
-#fi
-
 ## Build and install
 # Workaround 2018/10/18: remove -j as the ps2toolchain's Makefiles do not have dependencies set up properly.
 $GNUMAKE --quiet clean && $GNUMAKE --quiet && $GNUMAKE --quiet install && $GNUMAKE --quiet clean || { exit 1; }
