@@ -17,8 +17,8 @@ if [ -e ../../patches/gcc-$GCC_VERSION-PS2.patch ]; then
 	cat ../../patches/gcc-$GCC_VERSION-PS2.patch | patch -p1 || { exit 1; }
 fi
 
-## Apple needs to pretend to be linux
-if [ ${OSVER:0:6} == Darwin ]; then
+## Apple and BSD needs to pretend to be Linux.
+if [ ${OSVER:0:6} == Darwin ] || [[ $OSVER == *BSD* ]]; then
 	TARG_XTRA_OPTS="--build=i386-linux-gnu --host=i386-linux-gnu"
 else
 	TARG_XTRA_OPTS=""
